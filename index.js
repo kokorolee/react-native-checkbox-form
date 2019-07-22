@@ -43,6 +43,7 @@ class CheckboxForm extends Component {
     iconSize: PropTypes.number,
     iconColor: PropTypes.string,
     onChecked: PropTypes.func,
+    customStyle: PropTypes.object,
   };
 
   static defaultProps = {
@@ -53,6 +54,11 @@ class CheckboxForm extends Component {
     itemCheckedKey: 'checked',
     iconSize: 20,
     iconColor: '#2f86d5',
+    customStyle: {
+              flexDirection:  'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }
   };
 
   _onPress(item, i) {
@@ -66,7 +72,7 @@ class CheckboxForm extends Component {
   }
 
   renderCheckItem(item, i) {
-    const { itemShowKey, itemCheckedKey, iconSize, iconColor, textStyle } = this.props;
+    const { itemShowKey, itemCheckedKey, iconSize, iconColor, textStyle, customStyle } = this.props;
     const isChecked = item[itemCheckedKey] || false;
 
     return (
@@ -78,8 +84,7 @@ class CheckboxForm extends Component {
         }}
       >
         <View
-          style={{ flexDirection: this.props.labelHorizontal ? 'row' : 'column',
-            justifyContent: 'center', alignItems: 'center' }}
+          style={customStyle}
         >
           <Icon
             name={isChecked ? 'md-checkbox' : 'ios-square-outline'}

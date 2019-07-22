@@ -1,6 +1,6 @@
 react-native-checkbox-form
 ================================================
-  
+
 react-native-checkbox-form is a simple checkbox’s component, it works on Android and iOS, The Icon is used in the checkbox-form depends on [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons),
 
 <center>
@@ -58,7 +58,11 @@ export default class PRNRadioForm extends Component {
       <View style={styles.container}>
           <View style={{ marginVertical: 10, backgroundColor: "#E7E7E7" }} >
               <CheckboxFormX
-                  style={{ width: 350 - 30 }}
+                  customStyle={{
+                          flexDirection:  'row',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
                   dataSource={mockData}
                   itemShowKey="label"
                   itemCheckedKey="RNchecked"
@@ -73,7 +77,7 @@ export default class PRNRadioForm extends Component {
   }
 }
 ```
-##### 2.Set default checked value   
+##### 2.Set default checked value
 
 ```$javascript
 import React, { Component } from 'react';
@@ -116,7 +120,7 @@ export default class PRNRadioForm extends Component {
 }
 
 ```
-As shown above, add the attribute corresponding to the value of itemCheckedKey in the datasource.Thus whether active control is selected    
+As shown above, add the attribute corresponding to the value of itemCheckedKey in the datasource.Thus whether active control is selected
 
 Properties
 -------------------------------------------
