@@ -67,7 +67,6 @@ export default class PRNRadioForm extends Component {
                   itemShowKey="label"
                   itemCheckedKey="RNchecked"
                   iconSize={16}
-                  formHorizontal={true}
                   labelHorizontal={false}
                   onChecked={(item) => this._onSelect(item)}
               />
@@ -109,7 +108,11 @@ export default class PRNRadioForm extends Component {
                   itemShowKey="label"
                   itemCheckedKey="RNchecked"
                   iconSize={16}
-                  formHorizontal={true}
+                  customStyle={{
+                          flexDirection:  'row',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
                   labelHorizontal={false}
                   onChecked={(item) => this._onSelect(item)}
               />
@@ -135,7 +138,7 @@ Properties
 | iconSize | 20 | `number` | Specify the size of checkbox-form's icon |
 | iconColor | '#2f86d5' | `string` | Specify the color of checkbox-form's icon |
 | onChecked | - | `function` | This is called when the user click the Checkbox's item in the UI, The first and only argument will return whole dataSource, and what property is specified by itemCheckedKey is used for confirm the item whether is selected |
-| formHorizontal | false | `boolean` | Specify the form whether can horizontal arrangement |
+| customStyle |  | `object` | Specify the form whether can horizontal arrangement |
 | labelHorizontal | true | `boolean` | Specify between icon and label whether can horizontal arrangement |
 
 
